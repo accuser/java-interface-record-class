@@ -4,8 +4,6 @@ package com.bpp;
  * Represents an account in the system. An account has an email and a username.
  */
 public class Account implements AccountLike {
-    private static final String defaultDomainName = "my.bpp.com";
-
     /**
      * The email address associated with the account.
      */
@@ -34,7 +32,7 @@ public class Account implements AccountLike {
      * @param username the username of the account
      */
     public Account(String username) {
-        this(defaultEmail(username), username);
+        this(AccountUtilities.generateDefaultEmail(username), username);
     }
 
     /**
@@ -44,13 +42,23 @@ public class Account implements AccountLike {
      * @return the created Account object
      */
     public static Account from(AccountLike account) {
-        return new Account(account.email(), account.username());
+        String email = account.email();
+        String username = account.username();
+
+        return new Account(email, username);
     }
 
-    public static Account from(IdentityLike identityLike) {
-        String username = String.format("%1.1s%s", identityLike.firstName(), identityLike.lastName()).toLowerCase();
+    /**
+     * Creates an {@link Account} object from the given {@link IdentityLike} object.
+     *
+     * @param identity the IdentityLike to create the Account from
+     * @return the created Account object
+     */
+    public static Account from(IdentityLike identity) {
+        String email = AccountUtilities.generateDefaultEmail(identity);
+        String username = AccountUtilities.generateDefaultUsername(identity);
 
-        return new Account(username);
+        return new Account(email, username);
     }
 
     /**
@@ -69,15 +77,5 @@ public class Account implements AccountLike {
      */
     public String username() {
         return username;
-    }
-
-    /**
-     * Returns the default email of the account for the given username.
-     *
-     * @param username the username of the account
-     * @return the default email of the account
-     */
-    private static String defaultEmail(String username) {
-        return String.format("%s@%s", username, defaultDomainName);
     }
 }
