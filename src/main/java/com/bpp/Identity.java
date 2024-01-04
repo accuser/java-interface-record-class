@@ -15,7 +15,7 @@ public class Identity implements IdentityLike {
 	 * Creates an identity with the given first name and last name.
 	 * 
 	 * @param firstName The first name of the identity.
-	 * @param lastName  The last name of the identity.
+	 * @param lastName The last name of the identity.
 	 * @return An identity with the given first name and last name.
 	 */
 	public Identity(String firstName, String lastName) {
@@ -27,7 +27,7 @@ public class Identity implements IdentityLike {
 	 * Creates an identity with the given first name and last name.
 	 * 
 	 * @param firstName The first name of the identity.
-	 * @param lastName  The last name of the identity.
+	 * @param lastName The last name of the identity.
 	 * @return An identity with the given first name and last name.
 	 */
 	public static Identity from(IdentityLike identityLike) {
