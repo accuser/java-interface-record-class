@@ -9,9 +9,9 @@ public class App {
         String firstName = args[0];
         String lastName = args[1];
 
-        Learner alice = new Learner(new Identity(firstName, lastName));
+        Learner learner = new Learner(new Identity(firstName, lastName));
 
-        System.out.println(String.format("%s %s <%s> (%s)", alice.firstName(), alice.lastName(),
-                alice.email(), alice.username()));
+        System.out.println(String.format("%s %s <%s> (%s)", learner.firstName(), learner.lastName(),
+                learner.email(), learner.username()));
     }
 }
