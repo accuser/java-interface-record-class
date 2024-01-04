@@ -1,8 +1,7 @@
 package com.bpp;
 
 /**
- * The {@link AccountConfiguration} class represents the configuration settings
- * for accounts.
+ * The {@link AccountConfiguration} class represents the configuration settings for accounts.
  */
 public class AccountConfiguration {
 	/**
@@ -10,6 +9,5 @@ public class AccountConfiguration {
 	 */
 	public static final String DEFAULT_DOMAIN_NAME = "my.bpp.com";
 
-	private AccountConfiguration() {
-	}
+	private AccountConfiguration() {}
 }
