@@ -6,5 +6,12 @@
       "jdkDistro": "ms",
       "installMaven": true
     }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "GitHub.github-vscode-theme"
+      ]
+    }
   }
 }
