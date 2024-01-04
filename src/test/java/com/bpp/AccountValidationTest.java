@@ -7,23 +7,23 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class AccountValidationTest {
 
-    @Test
-    public void testValidEmail() {
-        assertTrue(AccountValidation.isValidEmail("abrockwell@my.bpp.com"));
-    }
+	@Test
+	public void testValidEmail() {
+		assertTrue(AccountValidation.isValidEmail("abrockwell@my.bpp.com"));
+	}
 
-    @Test
-    public void testInvalidEmail() {
-        assertFalse(AccountValidation.isValidEmail("invalid_email"));
-    }
+	@Test
+	public void testInvalidEmail() {
+		assertFalse(AccountValidation.isValidEmail("invalid_email"));
+	}
 
-    @Test
-    public void testValidUsername() {
-        assertTrue(AccountValidation.isValidUsername("abrockwell"));
-    }
+	@Test
+	public void testValidUsername() {
+		assertTrue(AccountValidation.isValidUsername("abrockwell"));
+	}
 
-    @Test
-    public void testInvalidUsername() {
-        assertFalse(AccountValidation.isValidUsername("invalid-username"));
-    }
+	@Test
+	public void testInvalidUsername() {
+		assertFalse(AccountValidation.isValidUsername("invalid-username"));
+	}
 }

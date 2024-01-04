@@ -8,29 +8,29 @@ import org.junit.jupiter.api.Test;
 
 public class AccountRecordTest {
 
-    @Test
-    public void testConstructor() {
-        String email = "alice@bpp.com";
-        String username = "alice";
+	@Test
+	public void testConstructor() {
+		String email = "alice@bpp.com";
+		String username = "alice";
 
-        AccountRecord account = new AccountRecord(email, username);
+		AccountRecord account = new AccountRecord(email, username);
 
-        assertNotNull(account);
-        assertEquals(email, account.email());
-        assertEquals(username, account.username());
-    }
+		assertNotNull(account);
+		assertEquals(email, account.email());
+		assertEquals(username, account.username());
+	}
 
-    @Test
-    public void testConstructorWithNullUsername() {
-        String email = "alice@bpp.com";
+	@Test
+	public void testConstructorWithNullUsername() {
+		String email = "alice@bpp.com";
 
-        assertThrows(NullPointerException.class, () -> new AccountRecord(email, null));
-    }
+		assertThrows(NullPointerException.class, () -> new AccountRecord(email, null));
+	}
 
-    @Test
-    public void testConstructorWithNullEmail() {
-        String username = "alice";
+	@Test
+	public void testConstructorWithNullEmail() {
+		String username = "alice";
 
-        assertThrows(NullPointerException.class, () -> new AccountRecord(null, username));
-    }
+		assertThrows(NullPointerException.class, () -> new AccountRecord(null, username));
+	}
 }

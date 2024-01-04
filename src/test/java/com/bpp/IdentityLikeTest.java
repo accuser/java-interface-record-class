@@ -7,66 +7,66 @@ import org.junit.jupiter.api.Test;
 
 public class IdentityLikeTest {
 
-    @Test
-    public void testConstructorWithNonNullValues() {
-        String firstName = "Alice";
-        String lastName = "Brockwell";
+	@Test
+	public void testConstructorWithNonNullValues() {
+		String firstName = "Alice";
+		String lastName = "Brockwell";
 
-        IdentityLike identityLike = new IdentityLike() {
-            @Override
-            public String firstName() {
-                return firstName;
-            }
+		IdentityLike identityLike = new IdentityLike() {
+			@Override
+			public String firstName() {
+				return firstName;
+			}
 
-            @Override
-            public String lastName() {
-                return lastName;
-            }
+			@Override
+			public String lastName() {
+				return lastName;
+			}
 
-        };
+		};
 
-        assertNotNull(identityLike);
-        assertEquals(firstName, identityLike.firstName());
-        assertEquals(lastName, identityLike.lastName());
-    }
+		assertNotNull(identityLike);
+		assertEquals(firstName, identityLike.firstName());
+		assertEquals(lastName, identityLike.lastName());
+	}
 
-    @Test
-    public void testFirstName() {
-        String firstName = "Alice";
+	@Test
+	public void testFirstName() {
+		String firstName = "Alice";
 
-        IdentityLike identityLike = new IdentityLike() {
-            @Override
-            public String firstName() {
-                return firstName;
-            }
+		IdentityLike identityLike = new IdentityLike() {
+			@Override
+			public String firstName() {
+				return firstName;
+			}
 
-            @Override
-            public String lastName() {
-                return "Brockwell";
-            }
+			@Override
+			public String lastName() {
+				return "Brockwell";
+			}
 
-        };
+		};
 
-        assertEquals(firstName, identityLike.firstName());
-    }
+		assertEquals(firstName, identityLike.firstName());
+	}
 
-    @Test
-    public void testLastName() {
-        String lastName = "Brockwell";
+	@Test
+	public void testLastName() {
+		String lastName = "Brockwell";
 
-        IdentityLike identityLike = new IdentityLike() {
-            @Override
-            public String firstName() {
-                return "Alice";
-            }
+		IdentityLike identityLike = new IdentityLike() {
+			@Override
+			public String firstName() {
+				return "Alice";
+			}
 
-            @Override
-            public String lastName() {
-                return lastName;
-            }
+			@Override
+			public String lastName() {
+				return lastName;
+			}
 
-        };
+		};
 
-        assertEquals(lastName, identityLike.lastName());
-    }
+		assertEquals(lastName, identityLike.lastName());
+	}
 }

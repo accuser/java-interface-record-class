@@ -5,11 +5,11 @@ package com.bpp;
  * for accounts.
  */
 public class AccountConfiguration {
-    /**
-     * The default domain name used for generating email addresses.
-     */
-    public static final String DEFAULT_DOMAIN_NAME = "my.bpp.com";
+	/**
+	 * The default domain name used for generating email addresses.
+	 */
+	public static final String DEFAULT_DOMAIN_NAME = "my.bpp.com";
 
-    private AccountConfiguration() {
-    }
+	private AccountConfiguration() {
+	}
 }
