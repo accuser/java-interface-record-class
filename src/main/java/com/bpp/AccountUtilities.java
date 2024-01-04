@@ -1,12 +1,11 @@
 package com.bpp;
 
 /**
- * The {@link AccountUtilities} class provides utility methods for generating
- * default email and username for accounts.
+ * The {@link AccountUtilities} class provides utility methods for generating default email and
+ * username for accounts.
  */
 public class AccountUtilities {
-	private AccountUtilities() {
-	}
+	private AccountUtilities() {}
 
 	/**
 	 * Generates a default email address for a given username.
