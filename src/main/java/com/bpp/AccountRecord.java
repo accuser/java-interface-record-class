@@ -11,7 +11,7 @@ public record AccountRecord(String email, String username) implements AccountLik
 	/**
 	 * Constructs an AccountRecord object with the specified username and email
 	 *
-	 * @param email    the email of the account
+	 * @param email the email of the account
 	 * @param username the username of the account
 	 */
 	public AccountRecord {
