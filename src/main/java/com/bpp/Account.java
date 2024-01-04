@@ -21,6 +21,14 @@ public class Account implements AccountLike {
      * @param username the username of the account
      */
     public Account(String email, String username) {
+        if (AccountValidation.isValidEmail(email) == false) {
+            throw new IllegalArgumentException("Invalid email format");
+        }
+
+        if (AccountValidation.isValidUsername(username) == false) {
+            throw new IllegalArgumentException("Invalid username format");
+        }
+
         this.email = email;
         this.username = username;
     }
