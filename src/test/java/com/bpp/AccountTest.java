@@ -5,10 +5,10 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.Test;
 
-public class AccountTest {
+class AccountTest {
 
 	@Test
-	public void testFromAccountLikeWithEmail() {
+	void testFromAccountLikeWithEmail() {
 		String username = "alice";
 		String email = "alice@bpp.com";
 		AccountLike accountLike = new AccountRecord(email, username);

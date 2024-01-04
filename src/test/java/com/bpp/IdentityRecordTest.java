@@ -5,10 +5,10 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
-public class IdentityRecordTest {
+class IdentityRecordTest {
 
 	@Test
-	public void testConstructorWithValidArguments() {
+	void testConstructorWithValidArguments() {
 		String firstName = "Alice";
 		String lastName = "Brockwell";
 
@@ -19,7 +19,7 @@ public class IdentityRecordTest {
 	}
 
 	@Test
-	public void testConstructorWithNullFirstName() {
+	void testConstructorWithNullFirstName() {
 		String lastName = "Brockwell";
 
 		assertThrows(NullPointerException.class, () -> {
@@ -28,7 +28,7 @@ public class IdentityRecordTest {
 	}
 
 	@Test
-	public void testConstructorWithNullLastName() {
+	void testConstructorWithNullLastName() {
 		String firstName = "Alice";
 
 		assertThrows(NullPointerException.class, () -> {

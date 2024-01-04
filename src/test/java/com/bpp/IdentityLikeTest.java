@@ -5,10 +5,10 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.Test;
 
-public class IdentityLikeTest {
+class IdentityLikeTest {
 
 	@Test
-	public void testConstructorWithNonNullValues() {
+	void testConstructorWithNonNullValues() {
 		String firstName = "Alice";
 		String lastName = "Brockwell";
 
@@ -31,7 +31,7 @@ public class IdentityLikeTest {
 	}
 
 	@Test
-	public void testFirstName() {
+	void testFirstName() {
 		String firstName = "Alice";
 
 		IdentityLike identityLike = new IdentityLike() {
@@ -51,7 +51,7 @@ public class IdentityLikeTest {
 	}
 
 	@Test
-	public void testLastName() {
+	void testLastName() {
 		String lastName = "Brockwell";
 
 		IdentityLike identityLike = new IdentityLike() {

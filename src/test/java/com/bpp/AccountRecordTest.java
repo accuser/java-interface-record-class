@@ -6,10 +6,10 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
-public class AccountRecordTest {
+class AccountRecordTest {
 
 	@Test
-	public void testConstructor() {
+	void testConstructor() {
 		String email = "alice@bpp.com";
 		String username = "alice";
 
@@ -21,14 +21,14 @@ public class AccountRecordTest {
 	}
 
 	@Test
-	public void testConstructorWithNullUsername() {
+	void testConstructorWithNullUsername() {
 		String email = "alice@bpp.com";
 
 		assertThrows(NullPointerException.class, () -> new AccountRecord(email, null));
 	}
 
 	@Test
-	public void testConstructorWithNullEmail() {
+	void testConstructorWithNullEmail() {
 		String username = "alice";
 
 		assertThrows(NullPointerException.class, () -> new AccountRecord(null, username));

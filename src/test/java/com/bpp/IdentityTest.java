@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.Test;
 
-public class IdentityTest {
+class IdentityTest {
 	private IdentityLike identityLike = new IdentityLike() {
 		@Override
 		public String firstName() {
@@ -19,7 +19,7 @@ public class IdentityTest {
 	};
 
 	@Test
-	public void testFromIdentityLike() {
+	void testFromIdentityLike() {
 		Identity identity = Identity.from(identityLike);
 
 		assertNotNull(identity);
@@ -28,14 +28,14 @@ public class IdentityTest {
 	}
 
 	@Test
-	public void testGetFirstName() {
+	void testGetFirstName() {
 		Identity identity = Identity.from(identityLike);
 
 		assertEquals(identityLike.firstName(), identity.firstName());
 	}
 
 	@Test
-	public void testGetLastName() {
+	void testGetLastName() {
 		Identity identity = Identity.from(identityLike);
 
 		assertEquals(identityLike.lastName(), identity.lastName());

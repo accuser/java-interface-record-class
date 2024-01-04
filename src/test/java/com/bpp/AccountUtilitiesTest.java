@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class AccountUtilitiesTest {
+class AccountUtilitiesTest {
 	IdentityLike identity = new IdentityLike() {
 		@Override
 		public String firstName() {
@@ -19,7 +19,7 @@ public class AccountUtilitiesTest {
 	};
 
 	@Test
-	public void testGenerateDefaultEmailWithUsername() {
+	void testGenerateDefaultEmailWithUsername() {
 		String username = "alice";
 
 		String email = AccountUtilities.generateDefaultEmail(username);
@@ -28,14 +28,14 @@ public class AccountUtilitiesTest {
 	}
 
 	@Test
-	public void testGenerateDefaultEmailWithIdentity() {
+	void testGenerateDefaultEmailWithIdentity() {
 		String email = AccountUtilities.generateDefaultEmail(identity);
 
 		assertEquals("abrockwell@my.bpp.com", email);
 	}
 
 	@Test
-	public void testGenerateDefaultUsername() {
+	void testGenerateDefaultUsername() {
 		String username = AccountUtilities.generateDefaultUsername(identity);
 
 		assertEquals("abrockwell", username);

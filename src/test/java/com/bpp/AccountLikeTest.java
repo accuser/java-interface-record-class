@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-public class AccountLikeTest {
+class AccountLikeTest {
 	AccountLike account = new AccountLike() {
 		@Override
 		public String email() {
@@ -18,12 +18,12 @@ public class AccountLikeTest {
 	};
 
 	@Test
-	public void testEmail() {
+	void testEmail() {
 		assertEquals("alice@bpp.com", account.email());
 	}
 
 	@Test
-	public void testUsername() {
+	void testUsername() {
 		assertEquals("alice", account.username());
 	}
 }
