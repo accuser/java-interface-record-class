@@ -11,7 +11,7 @@ public class AccountTest {
     public void testFromAccountLikeWithEmail() {
         String username = "alice";
         String email = "alice@bpp.com";
-        AccountLike accountLike = new AccountRecord(username, email);
+        AccountLike accountLike = new AccountRecord(email, username);
 
         Account account = Account.from(accountLike);
 
