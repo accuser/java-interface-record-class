@@ -6,38 +6,50 @@ import org.junit.jupiter.api.Test;
 import com.bpp.interfaces.IdentityLike;
 
 class IdentityTest {
+	String firstName = "Alice";
+	String lastName = "Brockwell";
+
 	private IdentityLike identityLike = new IdentityLike() {
 		@Override
 		public String firstName() {
-			return "Alice";
+			return firstName;
 		}
 
 		@Override
 		public String lastName() {
-			return "Brockwell";
+			return lastName;
 		}
 	};
+
+	@Test
+	void testConstructWithFirstNameAndLastName() {
+		Identity identity = new Identity(firstName, lastName);
+
+		assertNotNull(identity);
+		assertEquals(firstName, identity.firstName());
+		assertEquals(lastName, identity.lastName());
+	}
 
 	@Test
 	void testFromIdentityLike() {
 		Identity identity = Identity.from(identityLike);
 
 		assertNotNull(identity);
-		assertEquals(identityLike.firstName(), identity.firstName());
-		assertEquals(identityLike.lastName(), identity.lastName());
+		assertEquals(firstName, identity.firstName());
+		assertEquals(lastName, identity.lastName());
 	}
 
 	@Test
-	void testGetFirstName() {
+	void testFirstName() {
 		Identity identity = Identity.from(identityLike);
 
-		assertEquals(identityLike.firstName(), identity.firstName());
+		assertEquals(firstName, identity.firstName());
 	}
 
 	@Test
-	void testGetLastName() {
+	void testLastName() {
 		Identity identity = Identity.from(identityLike);
 
-		assertEquals(identityLike.lastName(), identity.lastName());
+		assertEquals(lastName, identity.lastName());
 	}
 }

@@ -5,18 +5,18 @@ import com.bpp.interfaces.IdentityLike;
 import com.bpp.validation.IdentityValidation;
 
 /**
- * The IdentityFactory class provides methods for creating Identity objects.
+ * The {@link IdentityFactory} class provides static methods for creating {@link Identity} objects.
  */
 public class IdentityFactory {
 	private IdentityFactory() {}
 
 	/**
-	 * Creates an Identity object with the specified first name and last name.
+	 * Creates an {@link Identity} object with the specified first name and last name fields.
 	 *
 	 * @param firstName the first name of the identity
 	 * @param lastName the last name of the identity
-	 * @return the created Identity object
-	 * @throws IllegalArgumentException if the first name or last name format is invalid
+	 * @return the created {@link Identity} object
+	 * @throws IllegalArgumentException if the first name or last name fields are invalid
 	 */
 	public static Identity createIdentity(String firstName, String lastName) {
 		if (!IdentityValidation.isValidFirstName(firstName)) {
@@ -27,26 +27,16 @@ public class IdentityFactory {
 			throw new IllegalArgumentException("Invalid last name format");
 		}
 
-		return Identity.from(new IdentityLike() {
-			@Override
-			public String firstName() {
-				return firstName;
-			}
-
-			@Override
-			public String lastName() {
-				return lastName;
-			}
-		});
+		return new Identity(firstName, lastName);
 	}
 
 	/**
-	 * Creates an Identity object based on the provided IdentityLike object.
+	 * Creates an {@link Identity} object based on the source {@link IdentityLike} object.
 	 *
-	 * @param identity the IdentityLike object containing the first name and last name
-	 * @return the created Identity object
+	 * @param source the source {@link IdentityLike} object containing
+	 * @return the created {@link Identity} object
 	 */
-	public static Identity createIdentity(IdentityLike identity) {
-		return Identity.from(identity);
+	public static Identity createIdentity(IdentityLike source) {
+		return Identity.from(source);
 	}
 }
