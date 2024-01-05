@@ -3,7 +3,7 @@ package com.bpp;
 /**
  * This class represents a learner.
  */
-public class Learner implements AccountLike, IdentityLike {
+public class Learner implements LearnerLike {
 	/**
 	 * The account associated with this learner.
 	 */
