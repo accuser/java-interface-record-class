@@ -2,6 +2,8 @@ package com.bpp;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
+import com.bpp.interfaces.LearnerLike;
+import com.bpp.presenters.LearnerPresenter;
 
 class LearnerPresenterTest {
 	LearnerLike learner = new LearnerLike() {

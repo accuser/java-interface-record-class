@@ -1,5 +1,8 @@
 package com.bpp;
 
+import com.bpp.interfaces.AccountLike;
+import com.bpp.validation.AccountValidation;
+
 /**
  * Represents an account in the system. An account has an email and a username.
  */
@@ -20,7 +23,7 @@ public class Account implements AccountLike {
 	 * @param email the email of the account
 	 * @param username the username of the account
 	 */
-	public Account(String email, String username) {
+	private Account(String email, String username) {
 		if (!AccountValidation.isValidEmail(email)) {
 			throw new IllegalArgumentException("Invalid email format");
 		}
@@ -31,16 +34,6 @@ public class Account implements AccountLike {
 
 		this.email = email;
 		this.username = username;
-	}
-
-	/**
-	 * Constructs an {@link Account} object with the given username. The email is set to the default
-	 * email.
-	 *
-	 * @param username the username of the account
-	 */
-	public Account(String username) {
-		this(AccountUtilities.generateDefaultEmail(username), username);
 	}
 
 	/**
@@ -56,18 +49,6 @@ public class Account implements AccountLike {
 		return new Account(email, username);
 	}
 
-	/**
-	 * Creates an {@link Account} object from the given {@link IdentityLike} object.
-	 *
-	 * @param identity the IdentityLike to create the Account from
-	 * @return the created Account object
-	 */
-	public static Account from(IdentityLike identity) {
-		String email = AccountUtilities.generateDefaultEmail(identity);
-		String username = AccountUtilities.generateDefaultUsername(identity);
-
-		return new Account(email, username);
-	}
 
 	/**
 	 * Returns the optional email of the account.

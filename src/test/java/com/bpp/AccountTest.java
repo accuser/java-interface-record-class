@@ -3,6 +3,8 @@ package com.bpp;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import org.junit.jupiter.api.Test;
+import com.bpp.interfaces.AccountLike;
+import com.bpp.records.AccountRecord;
 
 class AccountTest {
 	@Test

@@ -1,4 +1,8 @@
-package com.bpp;
+package com.bpp.factories;
+
+import com.bpp.Identity;
+import com.bpp.interfaces.IdentityLike;
+import com.bpp.validation.IdentityValidation;
 
 /**
  * The IdentityFactory class provides methods for creating Identity objects.
@@ -23,7 +27,17 @@ public class IdentityFactory {
 			throw new IllegalArgumentException("Invalid last name format");
 		}
 
-		return new Identity(firstName, lastName);
+		return Identity.from(new IdentityLike() {
+			@Override
+			public String firstName() {
+				return firstName;
+			}
+
+			@Override
+			public String lastName() {
+				return lastName;
+			}
+		});
 	}
 
 	/**
@@ -32,10 +46,7 @@ public class IdentityFactory {
 	 * @param identity the IdentityLike object containing the first name and last name
 	 * @return the created Identity object
 	 */
-	public static Identity createAccount(IdentityLike identity) {
-		String firstName = identity.firstName();
-		String lastName = identity.lastName();
-
-		return createIdentity(firstName, lastName);
+	public static Identity createIdentity(IdentityLike identity) {
+		return Identity.from(identity);
 	}
 }

@@ -1,5 +1,7 @@
 package com.bpp;
 
+import com.bpp.interfaces.LearnerLike;
+
 /**
  * This class represents a learner.
  */
@@ -17,12 +19,14 @@ public class Learner implements LearnerLike {
 	/**
 	 * Creates a learner with the given identity.
 	 *
+	 * @param account the account of the learner
 	 * @param identity the identity of the learner
 	 */
-	public Learner(Identity identity) {
-		this.account = Account.from(identity);
+	public Learner(Account account, Identity identity) {
+		this.account = account;
 		this.identity = identity;
 	}
+
 
 	/**
 	 * The first name associated with this learner.

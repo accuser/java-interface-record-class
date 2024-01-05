@@ -1,4 +1,7 @@
-package com.bpp;
+package com.bpp.utilities;
+
+import com.bpp.configuration.AccountConfiguration;
+import com.bpp.interfaces.IdentityLike;
 
 /**
  * The {@link AccountUtilities} class provides utility methods for generating default email and

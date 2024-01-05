@@ -1,4 +1,4 @@
-package com.bpp;
+package com.bpp.configuration;
 
 /**
  * The {@link AccountConfiguration} class represents the configuration settings for accounts.

@@ -1,6 +1,7 @@
-package com.bpp;
+package com.bpp.records;
 
 import java.util.Objects;
+import com.bpp.interfaces.AccountLike;
 
 /**
  * Represents an account record with an email and username.

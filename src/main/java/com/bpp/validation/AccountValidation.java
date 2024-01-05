@@ -1,4 +1,4 @@
-package com.bpp;
+package com.bpp.validation;
 
 /**
  * The AccountValidation class provides methods for validating email addresses and usernames.

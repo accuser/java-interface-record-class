@@ -1,6 +1,7 @@
-package com.bpp;
+package com.bpp.records;
 
 import java.util.Objects;
+import com.bpp.interfaces.IdentityLike;
 
 /**
  * Represents an identity record with a first name and last name. Implements the IdentityLike

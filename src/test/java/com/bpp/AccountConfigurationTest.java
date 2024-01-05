@@ -2,6 +2,7 @@ package com.bpp;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
+import com.bpp.configuration.AccountConfiguration;
 
 class AccountConfigurationTest {
 	@Test

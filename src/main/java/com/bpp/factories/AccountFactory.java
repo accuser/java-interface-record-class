@@ -1,4 +1,10 @@
-package com.bpp;
+package com.bpp.factories;
+
+import com.bpp.Account;
+import com.bpp.interfaces.AccountLike;
+import com.bpp.interfaces.IdentityLike;
+import com.bpp.utilities.AccountUtilities;
+import com.bpp.validation.AccountValidation;
 
 /**
  * The AccountFactory class provides static methods for creating Account objects.
@@ -23,7 +29,17 @@ public class AccountFactory {
 			throw new IllegalArgumentException("Invalid username format");
 		}
 
-		return new Account(email, username);
+		return Account.from(new AccountLike() {
+			@Override
+			public String email() {
+				return email;
+			}
+
+			@Override
+			public String username() {
+				return username;
+			}
+		});
 	}
 
 	/**
@@ -45,10 +61,7 @@ public class AccountFactory {
 	 * @return the created Account object
 	 */
 	public static Account createAccount(AccountLike account) {
-		String email = account.email();
-		String username = account.username();
-
-		return createAccount(email, username);
+		return Account.from(account);
 	}
 
 	/**

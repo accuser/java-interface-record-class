@@ -1,4 +1,4 @@
-package com.bpp;
+package com.bpp.interfaces;
 
 /**
  * This interface represents an identity-like object.

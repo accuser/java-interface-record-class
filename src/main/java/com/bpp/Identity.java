@@ -1,5 +1,7 @@
 package com.bpp;
 
+import com.bpp.interfaces.IdentityLike;
+
 public class Identity implements IdentityLike {
 	/**
 	 * The first name associated with this identity.
@@ -18,20 +20,19 @@ public class Identity implements IdentityLike {
 	 * @param lastName The last name of the identity.
 	 * @return An identity with the given first name and last name.
 	 */
-	public Identity(String firstName, String lastName) {
+	private Identity(String firstName, String lastName) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 	}
 
 	/**
-	 * Creates an identity with the given first name and last name.
+	 * Creates an identity from the given identity-like object.
 	 * 
-	 * @param firstName The first name of the identity.
-	 * @param lastName The last name of the identity.
-	 * @return An identity with the given first name and last name.
+	 * @param identity The identity-like object to create an identity from.
+	 * @return An identity with the same fields as the given identity-like object.
 	 */
-	public static Identity from(IdentityLike identityLike) {
-		return new Identity(identityLike.firstName(), identityLike.lastName());
+	public static Identity from(IdentityLike identity) {
+		return new Identity(identity.firstName(), identity.lastName());
 	}
 
 	/**

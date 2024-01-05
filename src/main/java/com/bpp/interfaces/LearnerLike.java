@@ -1,4 +1,4 @@
-package com.bpp;
+package com.bpp.interfaces;
 
 /**
  * This interface represents a learner-like entity. It extends the {@link AccountLike} and

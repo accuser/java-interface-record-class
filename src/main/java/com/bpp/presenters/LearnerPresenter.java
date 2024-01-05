@@ -1,4 +1,6 @@
-package com.bpp;
+package com.bpp.presenters;
+
+import com.bpp.interfaces.LearnerLike;
 
 /**
  * The LearnerPresenter class is responsible for presenting information about a Learner.

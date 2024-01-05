@@ -1,4 +1,4 @@
-package com.bpp;
+package com.bpp.validation;
 
 /**
  * The IdentityValidation class provides methods for validating first names and last names.
