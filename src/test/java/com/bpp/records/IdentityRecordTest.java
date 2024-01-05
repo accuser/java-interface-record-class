@@ -1,9 +1,8 @@
-package com.bpp;
+package com.bpp.records;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.Test;
-import com.bpp.records.IdentityRecord;
 
 class IdentityRecordTest {
 	@Test

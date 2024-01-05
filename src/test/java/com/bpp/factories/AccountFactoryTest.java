@@ -1,9 +1,9 @@
-package com.bpp;
+package com.bpp.factories;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.Test;
-import com.bpp.factories.AccountFactory;
+import com.bpp.Account;
 import com.bpp.interfaces.AccountLike;
 import com.bpp.interfaces.IdentityLike;
 import com.bpp.utilities.AccountUtilities;

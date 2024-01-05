@@ -1,10 +1,10 @@
-package com.bpp;
+package com.bpp.factories;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.Test;
-import com.bpp.factories.IdentityFactory;
+import com.bpp.Identity;
 import com.bpp.interfaces.IdentityLike;
 
 class IdentityFactoryTest {

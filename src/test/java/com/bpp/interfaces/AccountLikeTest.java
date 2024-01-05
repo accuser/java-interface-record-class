@@ -1,8 +1,7 @@
-package com.bpp;
+package com.bpp.interfaces;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
-import com.bpp.interfaces.AccountLike;
 
 class AccountLikeTest {
 	AccountLike account = new AccountLike() {

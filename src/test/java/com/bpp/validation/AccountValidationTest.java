@@ -1,9 +1,8 @@
-package com.bpp;
+package com.bpp.validation;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
-import com.bpp.validation.AccountValidation;
 
 class AccountValidationTest {
 	@Test
