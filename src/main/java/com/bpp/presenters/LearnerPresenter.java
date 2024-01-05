@@ -9,6 +9,16 @@ public class LearnerPresenter {
 	private LearnerLike learner;
 
 	/**
+	 * Create a new {@link LearnerPresenter} object with the specified Learner.
+	 * 
+	 * @param learner the {@link Learner}object to be presented
+	 * @return the created {@link LearnerPresenter} object
+	 */
+	public static LearnerPresenter presentLearner(LearnerLike learner) {
+		return new LearnerPresenter(learner);
+	}
+
+	/**
 	 * Constructs a LearnerPresenter object with the specified Learner.
 	 *
 	 * @param learner the Learner object to be presented
