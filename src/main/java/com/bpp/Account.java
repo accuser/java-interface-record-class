@@ -1,6 +1,8 @@
 package com.bpp;
 
 import com.bpp.interfaces.AccountLike;
+import com.bpp.interfaces.IdentityLike;
+import com.bpp.utilities.AccountUtilities;
 import com.bpp.validation.AccountValidation;
 
 /**
@@ -18,12 +20,14 @@ public class Account implements AccountLike {
 	private String username;
 
 	/**
-	 * Constructs an {@link Account} object with the given email and username.
-	 *
-	 * @param email the email of the account
+	 * Constructs an {@link Account} object with the specified email and username fields.
+	 * 
+	 * @param email the email address of the account
 	 * @param username the username of the account
+	 * @return the constructed {@link Account} object
+	 * @throws IllegalArgumentException if the email or username fields are invalid
 	 */
-	private Account(String email, String username) {
+	public Account(String email, String username) {
 		if (!AccountValidation.isValidEmail(email)) {
 			throw new IllegalArgumentException("Invalid email format");
 		}
@@ -37,18 +41,42 @@ public class Account implements AccountLike {
 	}
 
 	/**
-	 * Creates an {@link Account} object from the given {@link AccountLike} object.
-	 *
-	 * @param accountLike the AccountLike to create the Account from
-	 * @return the created Account object
+	 * Constructs an {@link Account} object with the specified username field, generating the email
+	 * fields based on the username.
+	 * 
+	 * @param username the username of the account
+	 * @return the created {@link Account} object
+	 * @throws IllegalArgumentException if the username is invalid
 	 */
-	public static Account from(AccountLike account) {
-		String email = account.email();
-		String username = account.username();
+	public Account(String username) {
+		this(AccountUtilities.generateDefaultEmail(username), username);
+	}
+
+	/**
+	 * Creates an {@link Account} object based on the source {@link AccountLike} object.
+	 * 
+	 * @param source the source {@link AccountLike} object
+	 * @return the created {@link Account} object
+	 */
+	public static Account from(AccountLike source) {
+		String email = source.email();
+		String username = source.username();
 
 		return new Account(email, username);
 	}
 
+	/**
+	 * Creates an {@link Account} object with a username generated from source {@link IdentityLike}
+	 * object.
+	 * 
+	 * @param source the source {@link IdentityLike} object
+	 * @return the created {@link Account} object
+	 */
+	public static Account from(IdentityLike source) {
+		String username = AccountUtilities.generateDefaultUsername(source);
+
+		return new Account(username);
+	}
 
 	/**
 	 * Returns the optional email of the account.

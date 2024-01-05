@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 import com.bpp.Account;
 import com.bpp.interfaces.AccountLike;
 import com.bpp.interfaces.IdentityLike;
-import com.bpp.utilities.AccountUtilities;
 
 class AccountFactoryTest {
 	String email = "abrockwell@my.bpp.com";
@@ -66,11 +65,9 @@ class AccountFactoryTest {
 
 	@Test
 	void testCreateAccount_UsernameOnly_ReturnsAccountWithDefaultEmail() {
-		String username = "alice123";
-
 		Account account = AccountFactory.createAccount(username);
 
-		assertEquals(AccountUtilities.generateDefaultEmail(username), account.email());
+		assertEquals(email, account.email());
 		assertEquals(username, account.username());
 	}
 
@@ -86,6 +83,7 @@ class AccountFactoryTest {
 	void testCreateAccount_IdentityLikeObject_ReturnsAccountWithDefaultUsername() {
 		Account account = AccountFactory.createAccount(identityLike);
 
+		assertEquals(email, account.email());
 		assertEquals(username, account.username());
 	}
 
