@@ -1,12 +1,10 @@
 package com.bpp;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.Test;
 
 class AccountValidationTest {
-
 	@Test
 	void testValidEmail() {
 		assertTrue(AccountValidation.isValidEmail("abrockwell@my.bpp.com"));
