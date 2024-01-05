@@ -79,9 +79,9 @@ public class Account implements AccountLike {
 	}
 
 	/**
-	 * Returns the optional email of the account.
+	 * Returns the email of the account.
 	 *
-	 * @return the optional email of the account
+	 * @return the email of the account
 	 */
 	public String email() {
 		return email;
