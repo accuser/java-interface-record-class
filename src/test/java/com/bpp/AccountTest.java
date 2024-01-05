@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import org.junit.jupiter.api.Test;
 import com.bpp.interfaces.AccountLike;
 import com.bpp.interfaces.IdentityLike;
-import com.bpp.records.AccountRecord;
 
 class AccountTest {
 	String email = "abrockwell@my.bpp.com";
